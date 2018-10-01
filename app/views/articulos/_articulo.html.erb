@@ -1,0 +1,10 @@
+
+      <tr>
+        <td><%= articulo.titulo %></td>
+        <td>Publicado hace <%= distance_of_time_in_words(articulo.created_at, Time.now) %></td>
+        <td><%= articulo.cuerpo %></td>
+        <td><%= link_to articulo.status, toggle_status_articulo_path(articulo) if logged_in?(:site_admin) %></td>
+        <td><%= link_to 'Show', articulo %></td>
+        <td><%= link_to 'Edit', edit_articulo_path(articulo) if logged_in?(:site_admin) %></td>
+        <td><%= link_to 'Destroy', articulo, method: :delete, data: { confirm: "¿Estás seguro?" } if logged_in?(:site_admin) %></td>
+      </tr>

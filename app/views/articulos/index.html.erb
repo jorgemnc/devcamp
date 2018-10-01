@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Artículos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Fecha</th>
+      <th>Cuerpo</th>
+      <th colspan=4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+<%= render @articulos %>
+
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Articulo', new_articulo_path if logged_in?(:site_admin) %>

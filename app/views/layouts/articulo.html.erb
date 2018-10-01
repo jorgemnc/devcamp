@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+      <meta name="keywords" content="<%= @seo_keywords%>" />
+
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'articulos', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+    <%= login_helper %>
+
+    <%= yield %>
+
+      <%= render "shared/nav", estilomenu: "inferior"  %>
+
+    <hr>
+    <%= fuente_helper("articulo_layout") %>
+    <hr>
+    Clase de current_user: <%= current_user.class%>
+
+  </body>
+</html>
